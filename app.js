@@ -15,7 +15,7 @@ app.use(cors());
 
 app.use('/', indexRouter);
 
-const PORT = 3000;
+const PORT = 8000;
 
 app.listen(PORT, (err) => {
     if (err) {

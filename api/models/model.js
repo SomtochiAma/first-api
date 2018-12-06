@@ -17,3 +17,14 @@ const artisanSchema = new Schema({
 
 let Artisan = module.exports = mongoose.model('Artisan', artisanSchema)
 
+module.exports.createArtisan= (newArtisan, callback) => {
+    newArtisan.save(callback)
+}
+
+module.exports.findArtisan = (userId, callback) => {
+    Artisan.findById(userId, callback)
+}
+
+module.exports.updateArtisan = (userId,updateInfo, callback) => {
+    Artisan.findByIdAndUpdate(userId, updateInfo, callback)
+}

@@ -3,10 +3,33 @@
     <head>
         <title>Baby Api</title>
         <meta charset="utf-8">
+        <link href="stylesheets/style.css" rel="stylesheet">
     </head>
     <body>
         <h3>Check out our console</h3>
-
+        <form action="/" method="POST">
+            First Name:
+            <input type="text" name="firstname" id="first-name"><br>
+            Last Name:
+            <input type="text" name="lastname" id="last-name"><br>
+            Phone Number:
+            <input type="text" name="phonenumber" id="phone-number"><br>
+            Location:
+            <input type="text" name="location" id="location"><br>
+            Occupation:
+            <input type="text" name="occupation" id="occupation"><br>
+            <input type="submit" id="submit-btn">
+            
+        </form>
+        <p></p>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Occupation</td>
+                <td>Phone Number</td>
+                <td>Location</td>
+            </tr>
+        </table>
         <script src="script.js"></script>
     </body>
 </html>

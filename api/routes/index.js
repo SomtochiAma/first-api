@@ -3,6 +3,13 @@ const express = require('express'),
         controller = require('../controllers/controller');
 
 
-router.get('/', controller.getData)
+router.route('/')
+        .get(controller.getData)
+        .post(controller.postData)
+
+router.route('/:id')
+        .get(controller.retrieveArtisan)
+        .patch(controller.updateData);
+
 
 module.exports = router;
