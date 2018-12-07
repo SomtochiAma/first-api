@@ -15,3 +15,7 @@ table {
     width: 80%;
   }
 
+
+  #update-form {
+    display: none;
+  }
