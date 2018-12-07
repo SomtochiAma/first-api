@@ -4,7 +4,7 @@ const express = require('express'),
         cors = require('cors')
         app = express();
 
-const indexRouter = require('./api/routes/index');
+const indexRouter = require('./api/v1/artisans/routes/index');
 
 
 app.use(bps.json());
@@ -13,7 +13,7 @@ app.use(cors());
 
 // app.use(express.static(path.join(__dirname, './public')));
 
-app.use('/', indexRouter);
+app.use('/api/v1/artisans', indexRouter);
 
 const PORT = 8000;
 

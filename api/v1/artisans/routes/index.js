@@ -9,7 +9,8 @@ router.route('/')
 
 router.route('/:id')
         .get(controller.retrieveArtisan)
-        .patch(controller.updateData);
+        .put(controller.updateData)
+        .delete(controller.deleteData)
 
 
 module.exports = router;

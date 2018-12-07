@@ -25,6 +25,18 @@ module.exports.findArtisan = (userId, callback) => {
     Artisan.findById(userId, callback)
 }
 
+module.exports.checkId= (userId) => {
+    if(mongoose.Types.ObjectId.isValid(userId)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 module.exports.updateArtisan = (userId,updateInfo, callback) => {
     Artisan.findByIdAndUpdate(userId, updateInfo, callback)
+}
+
+module.exports.deleteArtisan = (userId, callback) => {
+    Artisan.findByIdAndDelete(id, callback)
 }
