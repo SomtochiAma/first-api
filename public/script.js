@@ -1,5 +1,5 @@
 
-(fetch('http://localhost:8000/api/v1/artisans')
+fetch('http://localhost:8000/api/v1/artisans')
     .then(function(response) {
         return response.json();
     })
@@ -9,8 +9,7 @@
         deleteData();
         updateData();
         // location.reload();
-    })
-)();
+    });
 
 const displayData = (data) => {
     const table = document.querySelector('table');
@@ -68,7 +67,7 @@ function postInfo() {
         data.phoneNumber = phoneNumber;
 
         console.log(data);
-        fetch('http://localhost:3000/api/v1/artisans', {
+        fetch('http://localhost:8000/api/v1/artisans', {
             method: "POST",
             mode: "cors",
             headers: {
@@ -81,9 +80,10 @@ function postInfo() {
             console.log(myJson);
             para.textContent = "Successfully sent details"
         })
-        .catch((err) => {`Error: ${err}`})
+        .catch((err) => {`Error: ${err}`});
+        location.reload();
     })
-
+    
 }
 
 postInfo();
@@ -91,7 +91,7 @@ postInfo();
 function deleteData() {
     console.log("Hello")
     const deleteBtns = document.querySelectorAll(".delete");
-
+    
     deleteBtns.forEach(button => {
         button.addEventListener("click", function() {
             console.log("Hello!")
@@ -105,8 +105,10 @@ function deleteData() {
                     "Content-Type": "application/json; charset=utf-8"
                 },
             })
+            location.reload();
         })
     })
+    
 }
 
 function updateData() {
@@ -142,6 +144,7 @@ function updateData() {
                         para.textContent = "Successfully Updated details"
                     })
                     .catch((err) => {`Error: ${err}`})
+                    location.reload();
             })
 
         })
